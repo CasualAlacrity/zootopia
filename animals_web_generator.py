@@ -9,16 +9,17 @@ def run_app():
 
 def print_animals(animals_data: List[dict]):
     for animal in animals_data:
-        animal_name = animal["name"]
-        animal_diet = animal["characteristics"].get("diet")
-        animal_location = animal["locations"][0]
-        animal_type = animal["characteristics"].get("type")
+        animal_name = animal.get("name")
+        animal_diet = animal.get("characteristics").get("diet")
+        animal_location = animal.get("locations")[0]
+        animal_type = animal.get("characteristics").get("type")
 
-        if animal_name: print(f"Name: {animal_name}")
-        if animal_diet: print(f"Diet: {animal_diet}")
+        if animal_name:     print(f"Name: {animal_name}")
+        if animal_diet:     print(f"Diet: {animal_diet}")
         if animal_location: print(f"Location: {animal_location}")
-        if animal_type: print(f"Type: {animal_type}")
-        print("") # New line for better readability
+        if animal_type:     print(f"Type: {animal_type}")
+        print("")  # New line for better readability
+
 
 def load_data(file_path):
     """ Loads a JSON file """
