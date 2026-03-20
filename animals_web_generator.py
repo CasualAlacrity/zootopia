@@ -26,10 +26,12 @@ def parse_animal_data_to_html(animals_data: List[dict]) -> str:
         animal_html_data += '<li class="cards__item">\n'  # Open the list item
 
         # Add animal information to the HTML
-        if animal_name: animal_html_data += f"Name: {animal_name}<br/>\n"
-        if animal_diet: animal_html_data += f"Diet: {animal_diet}<br/>\n"
-        if animal_location: animal_html_data += f"Location: {animal_location}<br/>\n"
-        if animal_type: animal_html_data += f"Type: {animal_type}<br/>\n"
+        if animal_name: animal_html_data += f'<div class="card__title">{animal_name}</div>\n'
+        animal_html_data += '<p class="card__text">\n'
+        if animal_diet: animal_html_data += f"<strong>Diet:</strong> {animal_diet}<br/>\n"
+        if animal_location: animal_html_data += f"<strong>Location:</strong> {animal_location}<br/>\n"
+        if animal_type: animal_html_data += f"<strong>Type:</strong> {animal_type}<br/>\n"
+        animal_html_data += '</p>\n'
 
         animal_html_data += '</li>\n'  # Close the list item
 
